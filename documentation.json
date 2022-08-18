@@ -196,6 +196,143 @@
             }
         },
         {
+            "name": "FlareLoaderComponent",
+            "id": "component-FlareLoaderComponent-12a652173fcc450211c2c2277d638827f68d9b79e8a691562f02fcf9ebb83dff67ab999a5f2bee59ad94110a5358c9123c3f05e43adfb5bbce3fe1f32337baab",
+            "file": "projects/ng-loader/src/lib/loader.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "flare-loader",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "loader.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "customStyles",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36,
+                    "type": "string | [] | Set | literal type",
+                    "decorators": []
+                },
+                {
+                    "name": "isLoading",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nWhen false, the content in the <ng-template> will be shown.\nDefault is true.\n",
+                    "description": "<p>When false, the content in the <ng-template> will be shown.\nDefault is true.</p>\n",
+                    "line": 17,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "mode",
+                    "defaultValue": "LoaderMode.Indeterminate",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nEnum representing state as either `determinate` or `indeterminate`.\nDefines the mode of progress.\nFor showing static progress or dynamic use the mode `determinate` in conjunction with the `value` input.\nDefault: indeterminate.\n",
+                    "description": "<p>Enum representing state as either <code>determinate</code> or <code>indeterminate</code>.\nDefines the mode of progress.\nFor showing static progress or dynamic use the mode <code>determinate</code> in conjunction with the <code>value</code> input.\nDefault: indeterminate.</p>\n",
+                    "line": 33,
+                    "type": "LoaderMode",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nCurrent value of the progress.\nShould be between 0 to 100.\ndefault: 0\n",
+                    "description": "<p>Current value of the progress.\nShould be between 0 to 100.\ndefault: 0</p>\n",
+                    "line": 25,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "loaderModes",
+                    "defaultValue": "LoaderMode",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "<p>For internal use.</p>\n",
+                    "line": 45,
+                    "rawdescription": "\n\nFor internal use.\n",
+                    "modifierKind": [
+                        123,
+                        144
+                    ]
+                },
+                {
+                    "name": "styles",
+                    "defaultValue": "{}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | string[] | Set<string> | literal type",
+                    "optional": false,
+                    "description": "",
+                    "line": 40,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, ChangeDetectionStrategy } from '@angular/core';\r\n\r\nimport { LoaderMode } from './loader.model';\r\n\r\n@Component({\r\n  selector: 'flare-loader',\r\n  templateUrl: 'loader.component.html',\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class FlareLoaderComponent {\r\n\r\n  /**\r\n   * When false, the content in the <ng-template> will be shown.\r\n   * Default is true.\r\n   */\r\n  @Input()\r\n  public isLoading = true;\r\n\r\n  /**\r\n   * Current value of the progress.\r\n   * Should be between 0 to 100.\r\n   * default: 0\r\n   */\r\n  @Input()\r\n  public value = 0;\r\n  /**\r\n   * Enum representing state as either `determinate` or `indeterminate`.\r\n   * Defines the mode of progress.\r\n   * For showing static progress or dynamic use the mode `determinate` in conjunction with the `value` input.\r\n   * Default: indeterminate.\r\n   */\r\n  @Input()\r\n  public mode: LoaderMode = LoaderMode.Indeterminate;\r\n\r\n  @Input()\r\n  public set customStyles(value: string | string[] | Set<string> | { [klass: string]: any }) {\r\n    this.styles = value;\r\n  }\r\n\r\n  public styles: string | string[] | Set<string> | { [klass: string]: any } = {};\r\n\r\n  /**\r\n   * For internal use.\r\n   */\r\n  public readonly loaderModes = LoaderMode;\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "accessors": {
+                "customStyles": {
+                    "name": "customStyles",
+                    "setSignature": {
+                        "name": "customStyles",
+                        "type": "void",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "args": [
+                            {
+                                "name": "value",
+                                "type": "string | string[] | Set<string> | literal type",
+                                "deprecated": false,
+                                "deprecationMessage": ""
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 36,
+                        "jsdoctags": [
+                            {
+                                "name": "value",
+                                "type": "string | string[] | Set<string> | literal type",
+                                "deprecated": false,
+                                "deprecationMessage": "",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "templateData": "<span>Loader</span>"
+        },
+        {
             "name": "HeaderComponent",
             "id": "component-HeaderComponent-a557eec14f72c438a8033301f4d6ce023e0a1844a3b06ec2b38794a612acc31735ae78a5ee10071b230c8c20d699eb914554e69d07ade54adb371da8efb464cc",
             "file": "src/stories/header.component.ts",
@@ -266,6 +403,91 @@
                     "styleUrl": "./header.css"
                 }
             ],
+            "stylesData": ""
+        },
+        {
+            "name": "LoaderExample",
+            "id": "component-LoaderExample-54b7af568f8dac61896c331d1bb2747c172fe6f88ad96c9792a171ab57395ea910d9ab269f6705b8e49d4876b4d85b98d7c31a32229fa8eedd2987374fd695ba",
+            "file": "projects/ng-loader/src/lib/docs/loader-example.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "flare-loader-example",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<flare-loader [value]=\"value$ | async\" [isLoading]=\"loading$ | async\" [mode]=\"mode\">\n  <div>\n    Some Content which will show after loading is completed\n  </div>\n</flare-loader>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "isLoading",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 22,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "loading$",
+                    "defaultValue": "this.value$.pipe(\r\n    filter(v => v >= 100),\r\n    mapTo(false),\r\n    startWith(true),\r\n  )",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 33,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "mode",
+                    "defaultValue": "LoaderMode.Determinate",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 24,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "value$",
+                    "defaultValue": "interval(2000).pipe(\r\n    map(() => Math.floor(Math.random() * 10) + 1),\r\n    scan((acc, value) => Math.min(acc + value, 100)),\r\n    takeWhile((value) => value !== 100, true),\r\n    shareReplay(1),\r\n  )",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 26,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, ChangeDetectionStrategy } from '@angular/core';\r\n\r\nimport { map, scan, takeWhile, filter, startWith, mapTo, shareReplay } from 'rxjs/operators';\r\nimport { interval } from 'rxjs';\r\n\r\nimport { LoaderMode } from '../loader.model';\r\n\r\n@Component({\r\n  selector: 'flare-loader-example',\r\n  template: `\r\n    <flare-loader [value]=\"value$ | async\" [isLoading]=\"loading$ | async\" [mode]=\"mode\">\r\n      <div>\r\n        Some Content which will show after loading is completed\r\n      </div>\r\n    </flare-loader>\r\n  `,\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class LoaderExample {\r\n\r\n  public isLoading = true;\r\n\r\n  public mode = LoaderMode.Determinate;\r\n\r\n  public value$ = interval(2000).pipe(\r\n    map(() => Math.floor(Math.random() * 10) + 1),\r\n    scan((acc, value) => Math.min(acc + value, 100)),\r\n    takeWhile((value) => value !== 100, true),\r\n    shareReplay(1),\r\n  );\r\n\r\n  public loading$ = this.value$.pipe(\r\n    filter(v => v >= 100),\r\n    mapTo(false),\r\n    startWith(true),\r\n  );\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
             "stylesData": ""
         },
         {
@@ -393,6 +615,98 @@
                     "elements": []
                 }
             ]
+        },
+        {
+            "name": "FlareLoaderExampleModule",
+            "id": "module-FlareLoaderExampleModule-ecde75b119be702b76e4c0ce66e1823d1b04bd2e2e75e1554b0e06e3ea0da7cddec369ee7631791e69023deb0e22b83f6ae1048893fb47132131e80b88afd38b",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ng-loader/src/lib/docs/loader-example.module.ts",
+            "methods": [],
+            "sourceCode": "\r\nimport { CommonModule } from '@angular/common';\r\nimport { NgModule } from '@angular/core';\r\n\r\nimport { FlareLoaderModule } from '../loader.module';\r\nimport { LoaderExample } from './loader-example.component';\r\n\r\n@NgModule({\r\n  imports: [\r\n    CommonModule,\r\n    FlareLoaderModule,\r\n  ],\r\n  declarations: [LoaderExample],\r\n  exports: [LoaderExample],\r\n})\r\nexport class FlareLoaderExampleModule {\r\n}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "LoaderExample"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "FlareLoaderModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "LoaderExample"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "FlareLoaderModule",
+            "id": "module-FlareLoaderModule-a522d0b2c294ecb59327e5a596f7ea8155dc36f506dfd23cb303da656138094c362a7c0881ef14699b63512c8af43109a05cd2050d59733230872f7c0296057b",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/ng-loader/src/lib/loader.module.ts",
+            "methods": [],
+            "sourceCode": "\r\n\r\nimport { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\nimport { FlareLoaderComponent } from './loader.component';\r\n\r\n@NgModule({\r\n  imports: [\r\n    CommonModule,\r\n  ],\r\n  declarations: [\r\n    FlareLoaderComponent,\r\n  ],\r\n  exports: [\r\n    FlareLoaderComponent,\r\n  ],\r\n})\r\nexport class FlareLoaderModule {\r\n}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "FlareLoaderComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "FlareLoaderComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
         }
     ],
     "miscellaneous": {
@@ -401,7 +715,7 @@
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/test.ts",
+                "file": "projects/ng-loader/src/test.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -491,7 +805,7 @@
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/test.ts",
+                "file": "projects/ng-loader/src/test.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "literal type"
@@ -549,14 +863,38 @@
         ],
         "functions": [],
         "typealiases": [],
-        "enumerations": [],
+        "enumerations": [
+            {
+                "name": "LoaderMode",
+                "childs": [
+                    {
+                        "name": "Indeterminate",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": 1
+                    },
+                    {
+                        "name": "Determinate",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": 2
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "projects/ng-loader/src/lib/loader.model.ts"
+            }
+        ],
         "groupedVariables": {
-            "src/test.ts": [
+            "projects/ng-loader/src/test.ts": [
                 {
                     "name": "context",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/test.ts",
+                    "file": "projects/ng-loader/src/test.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -566,7 +904,7 @@
                     "name": "require",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/test.ts",
+                    "file": "projects/ng-loader/src/test.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "literal type"
@@ -714,14 +1052,78 @@
             ]
         },
         "groupedFunctions": {},
-        "groupedEnumerations": {},
+        "groupedEnumerations": {
+            "projects/ng-loader/src/lib/loader.model.ts": [
+                {
+                    "name": "LoaderMode",
+                    "childs": [
+                        {
+                            "name": "Indeterminate",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": 1
+                        },
+                        {
+                            "name": "Determinate",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": 2
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "projects/ng-loader/src/lib/loader.model.ts"
+                }
+            ]
+        },
         "groupedTypeAliases": {}
     },
     "routes": [],
     "coverage": {
-        "count": 4,
+        "count": 6,
         "status": "low",
         "files": [
+            {
+                "filePath": "projects/ng-loader/src/lib/docs/loader-example.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LoaderExample",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-loader/src/lib/loader.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FlareLoaderComponent",
+                "coveragePercent": 57,
+                "coverageCount": "4/7",
+                "status": "good"
+            },
+            {
+                "filePath": "projects/ng-loader/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng-loader/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
             {
                 "filePath": "src/app/app.component.ts",
                 "type": "component",
@@ -895,26 +1297,6 @@
                 "name": "PageComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
-                "status": "low"
-            },
-            {
-                "filePath": "src/test.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "context",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/test.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "require",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
                 "status": "low"
             }
         ]

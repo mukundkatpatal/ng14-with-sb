@@ -1,9 +1,11 @@
 {
-  "name": "ng-loader",
-  "version": "0.0.1",
+  "name": "@flare/ng-loader",
+  "version": "2.0.4",
   "peerDependencies": {
-    "@angular/common": "^14.1.0",
-    "@angular/core": "^14.1.0"
+    "@angular/common": ">= 14 < 15",
+    "@angular/core": ">= 14 < 15",
+    "@flare/fonts": ">= 3.11.0",
+    "@flare/styles": ">= 10.7.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"

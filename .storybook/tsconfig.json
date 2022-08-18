@@ -1,5 +1,5 @@
 {
-  "extends": "../tsconfig.app.json",
+  "extends": "../tsconfig.json",
   "compilerOptions": {
     "types": [
       "node"
@@ -13,9 +13,11 @@
   ],
   "include": [
     "../src/**/*",
-    "../projects/**/*"
+    "../projects/**/*.ts",
+    "../projects/**/*.stories.mdx",
   ],
   "files": [
-    "./typings.d.ts"
+    "./typings.d.ts",
+    "../projects/ng-loader/src/public-api.ts",
   ]
 }

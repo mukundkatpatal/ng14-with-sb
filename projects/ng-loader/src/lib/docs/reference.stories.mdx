@@ -1,0 +1,207 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { action } from '@storybook/addon-actions';
+
+import { FlareLoaderModule } from '../loader.module';
+import { FlareLoaderExampleModule } from './loader-example.module';
+import { LoaderMode } from '../loader.model';
+
+<Meta
+  title="ng-loader/API Reference"
+  decorators={[
+    moduleMetadata({
+      imports: [
+        FlareLoaderModule,
+        FlareLoaderExampleModule,
+      ],
+    }),
+  ]}
+  argTypes={{
+    isLoading: {
+      control: 'boolean',
+      defaultValue: true,
+    }
+  }}
+/>
+
+# API Reference for `@flare/ng-loader`
+
+## Installation
+
+```sh
+npm install @flare/ng-loader
+```
+
+
+```typescript
+import { FlareLoaderModule } from '@flare/ng-loader';
+
+@NgModule({
+  imports: [
+    FlareLoaderModule
+  ],
+})
+export class AppModule {
+}
+```
+
+## Component
+
+### FlareLoaderComponent
+
+Provides a loader with animation.
+
+#### Selector
+
+`flare-loader`
+
+#### Properties
+
+| Name | Description |
+| --- | ----- |
+| `@Input() isLoading: boolean` | Displays loading animations when true. When false, shows the content passed in ng-template`default: true` |
+| `@Input() value: number` | Current value of the progress. Should be between 0 to 100. `default: 0` |
+| `@Input() mode: LoaderMode` | Defines the mode of progress. For showing static progress or dynamic progress use the mode `determinate` in conjunction with the `value` input. Default: `indeterminate`.|
+| `@Input() customStyles: string | string[] | Set<string> | { [klass: string]: any }` | Custom css classes that should be added to the progressbar. |
+
+#### Types
+
+```typescript
+export enum LoaderMode {
+  /**
+   * Will show animation until `isLoading` is `true`.
+   */
+   Indeterminate = 1,
+  /**
+   * Will show progress accorning to the `value` passed.
+   */
+  Determinate = 2,
+}
+```
+
+#### Examples
+
+##### Default: Top
+
+export const PageLevelTemplate = (args) => ({
+  template: `
+    <div class="sb-frameless">
+      <flare-loader [isLoading]="isLoading">
+        <div>
+          Some Content which will show after loading is completed
+        </div>
+      </flare-loader>
+    </div>
+  `,
+  props: args,
+})
+
+<Canvas>
+  <Story name="Page level" args={{ isLoading: true }}>{
+    PageLevelTemplate.bind({})
+  }</Story>
+</Canvas>
+
+##### Bottom
+
+export const BottomTemplate = (args) => ({
+  template: `
+    <div style="text-align:center; position: absolute; top: 25%; left: 25%; width:50%; height: 50%; background-color: white">
+      <div style="position: absolute; bottom: 0px; width: 100%;">
+        <flare-loader [isLoading]="isLoading">
+          <div>
+            Some Content which will show after loading is completed
+          </div>
+        </flare-loader>
+      </div>
+    </div>
+  `,
+  props: args,
+})
+
+<Canvas>
+  <Story name="Bottom">{
+    BottomTemplate.bind({})
+  }</Story>
+</Canvas>
+
+##### Center
+
+export const CenterTemplate = (args) => ({
+  template: `
+    <div style="text-align:center; position: absolute; top: 25%; left: 25%; width:50%; height: 50%; background-color: white">
+      <div style="position: absolute; bottom: 50%; width: 100%;">
+        <flare-loader [isLoading]="isLoading">
+          <div>
+            Some Content which will show after loading is completed
+          </div>
+        </flare-loader>
+      </div>
+    </div>
+  `,
+  props: args,
+})
+
+<Canvas>
+  <Story name="Center">{
+    CenterTemplate.bind({})
+  }</Story>
+</Canvas>
+
+##### Static
+
+export const StaticProgressTemplate = (args) => ({
+  template: `
+    <div style="text-align:center; position: absolute; top: 25%; left: 25%; width:50%; height: 50%; background-color: white">
+      <div style="position: absolute; bottom: 50%; width: 100%;">
+        <flare-loader [value]="value" [mode]="mode" [isLoading]="isLoading"></flare-loader>
+      </div>
+    </div>
+  `,
+  props: {
+    ...args,
+    mode: LoaderMode.Determinate,
+  },
+})
+
+<Canvas>
+  <Story
+    name="Static Progress"
+    argTypes={{
+      value: {
+        defaultValue: 70,
+        control: {
+          type: 'number',
+          min: 0,
+          max: 100
+        }
+      }
+    }}
+  >{
+    StaticProgressTemplate.bind({})
+  }</Story>
+</Canvas>
+
+##### Dynamic
+
+export const DynamicTemplate = (args) => ({
+  template: `
+    <div style="text-align:center; position: absolute; top: 25%; left: 25%; width:50%; height: 50%; background-color: white">
+      <div style="position: absolute; bottom: 50%; width: 100%;">
+        <flare-loader-example></flare-loader-example>
+      </div>
+    </div>
+  `,
+  props: args,
+})
+
+<Canvas>
+  <Story
+    name="Dynamic"
+    argTypes={{
+      isLoading: { control: { disable: true } },
+    }}
+  >{
+    DynamicTemplate.bind({})
+  }</Story>
+</Canvas>
